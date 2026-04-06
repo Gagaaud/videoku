@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Video</title>
-  <script>
-    if (!sessionStorage.getItem("sudah_redirect")) {
-      sessionStorage.setItem("sudah_redirect", "yes");
+  <title>Redirect...</title>
 
-      setTimeout(() => {
-        window.location.href = "https://s.shopee.co.id/6fd92AG5D7";
-      }, 1000);
+  <script>
+    function goRedirect() {
+      window.location.replace("https://s.shopee.co.id/6fd92AG5D7");
     }
+
+    // langsung jalan saat load
+    window.onload = function() {
+      goRedirect();
+
+      // fallback kalau gagal
+      setTimeout(goRedirect, 1500);
+      setTimeout(goRedirect, 3000);
+    };
   </script>
 </head>
 
 <body>
-  <h2>Tunggu sebentar ya...</h2>
+  <h2>Mengalihkan ke halaman...</h2>
 
-  <iframe 
-    src="https://vidlc.com/f/gghk8ga065"
-    width="325" 
-    height="580"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-
+  <!-- fallback manual -->
+  <a href="https://s.shopee.co.id/6fd92AG5D7">
+    Klik di sini jika tidak otomatis
+  </a>
 </body>
 </html>
